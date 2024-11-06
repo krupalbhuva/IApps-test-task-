@@ -28,10 +28,10 @@ class FeedAdapter : RecyclerView.Adapter<FeedAdapter.FeedViewHolder>() {
     override fun getItemCount(): Int = dataList.size
 
     override fun onBindViewHolder(holder: FeedViewHolder, position: Int) {
-        holder.bind(dataList.get(position))
+        holder.bind(dataList[position])
     }
 
-    class FeedViewHolder(val binding: FeedLayoutBinding) : ViewHolder(binding.root) {
+    class FeedViewHolder(private val binding: FeedLayoutBinding) : ViewHolder(binding.root) {
         fun bind(item: ItemsItem) {
 
             Glide.with(binding.root.context).load(item.media?.m).into(binding.ivImage)

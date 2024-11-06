@@ -1,5 +1,6 @@
 package com.example.iapps_test_task.model
 
+import com.example.iapps_test_task.data.local.entity.FeedEntity
 import com.google.gson.annotations.SerializedName
 
 data class FeedListResponse(
@@ -57,4 +58,16 @@ data class ItemsItem(
 
     @field:SerializedName("tags")
     val tags: String? = null
+)
+
+fun ItemsItem.toFeedEntity() = FeedEntity(
+    title = title.toString(),
+    link = link.toString(),
+    media = media?.m.toString(),
+    dateTaken = dateTaken.toString(),
+    description = description.toString(),
+    published = published.toString(),
+    author = author.toString(),
+    authorId = authorId.toString(),
+    tags = tags.toString()
 )
