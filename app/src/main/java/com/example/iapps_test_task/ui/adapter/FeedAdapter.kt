@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.bumptech.glide.Glide
 import com.example.iapps_test_task.databinding.FeedLayoutBinding
 import com.example.iapps_test_task.model.ItemsItem
+import com.example.iapps_test_task.utils.ext.openLink
 
 class FeedAdapter : RecyclerView.Adapter<FeedAdapter.FeedViewHolder>() {
 
@@ -39,7 +40,7 @@ class FeedAdapter : RecyclerView.Adapter<FeedAdapter.FeedViewHolder>() {
                 Html.fromHtml(item.description, Html.FROM_HTML_MODE_COMPACT)
 
             binding.cvMain.setOnClickListener {
-
+                item.link?.let { it1 -> it.context.openLink(it1) }
             }
         }
     }
