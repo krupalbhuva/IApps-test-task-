@@ -22,10 +22,10 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
-        val prop = Properties().apply {
-            load(FileInputStream(File(rootProject.rootDir, "local.properties")))
-        }
-        buildConfigField("String","BASE_URL", prop.getProperty("BASE_URL"))
+//        val prop = Properties().apply {
+//            load(FileInputStream(File(rootProject.rootDir, "local.properties")))
+//        }
+//        buildConfigField("String","BASE_URL", prop.getProperty("BASE_URL"))
 
     }
 
